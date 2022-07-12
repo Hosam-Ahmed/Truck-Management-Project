@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Project.Views.CustomerManagement.displayPeopleInformationUC"
+             xmlns:local="clr-namespace:Project.Views.CustomerManagement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" >
+
+    <Grid Name="formGrid" ShowGridLines="False" Width="auto" Height="auto" Margin="0 , 50 , 0, 0   " Background="Azure">
+        <StackPanel >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="14*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Search People Information"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Width="auto"  />
+                <Label Name="errorLabel" Grid.Row="1"  Content="Please Select the Person ID" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,8,0,0" Foreground="Red" Grid.RowSpan="2" FontWeight="Bold"/>
+
+            </Grid >
+        </StackPanel>
+        <StackPanel>
+            <Grid Margin='0,70 , 0, 0'>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <materialDesign:Badged
+  x:Name="CountingBadge"
+  BadgeColorZoneMode="PrimaryDark" HorizontalAlignment="Center" Height="0" Width="0"/>
+                <DataGrid IsReadOnly="True" Height="500" ScrollViewer.CanContentScroll="True" ScrollViewer.IsDeferredScrollingEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin='0,150 , 0, 0'  Grid.Row="2" BorderThickness="1" x:Name="customerDataGrid" CanUserAddRows="False" SelectionUnit="Cell" SelectionMode="Extended" FontWeight="Bold" FontSize="16" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                    <DataGrid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3A5FF" Offset="0"/>
+                            <GradientStop Color="#FFEDEFF3" Offset="1"/>
+                        </LinearGradientBrush>
+                    </DataGrid.Background>
+                </DataGrid>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <Grid Margin='0,70 , 0, 0'>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <CheckBox x:Name="FilledComboBoxEnabledCheckBox" IsChecked="False" HorizontalAlignment="Left" Content="Enabled" Checked="FilledComboBoxEnabledCheckBox_Checked" />
+                <Button Content="Clear" Style="{StaticResource MaterialDesignFlatButton}" HorizontalAlignment="Right" Click="ClearFilledComboBox_Click"  Width="83" Grid.Column="0" />
+                <ComboBox x:Name="idComboBox" Grid.Row="1" Style="{StaticResource MaterialDesignFilledComboBox}" IsEnabled="{Binding IsChecked, ElementName=FilledComboBoxEnabledCheckBox}" materialDesign:HintAssist.Hint="Select Person ID" Width="auto"/>
+
+                <Button MaxWidth="500" x:Name="searchCustomerButton" Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignRaisedLightButton}" Click="searchCustomerButton_Click" Content="Search"  Margin=" 40, 10"/>
+            </Grid>
+            <Button MaxWidth="500" x:Name="showAllCustomerButton" Grid.Row="0"  Grid.Column="1" Style="{StaticResource MaterialDesignRaisedLightButton}" Click="showAllCustomerButton_Click" Content="Show All" Margin=" 200, 10"  />
+        </StackPanel>
+    </Grid>
+</UserControl>

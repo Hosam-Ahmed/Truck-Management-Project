@@ -1,0 +1,53 @@
+﻿<Window x:Class="FinalProject.Views.MainForm"
+        xmlns:local="clr-namespace:FinalProject.Views"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="900"
+        MinHeight="730" MinWidth="900"
+        WindowStartupLocation="CenterScreen" >
+
+    <Grid Background="#2E333A">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu x:Name="mainMenu" Grid.Row="0" VerticalAlignment="Top" Background="#95a7bf">
+            <MenuItem x:Name="truckManagement" Header="Truck" FontSize="18">
+                <MenuItem x:Name="addTruck" Header="Add Truck" FontSize="18" Click="addTruck_Click"/>
+                <MenuItem x:Name="addFeature" Header="Add Feature" FontSize="18" Click="addFeature_Click"/>
+                <MenuItem x:Name="searchTruck" Header="Search Truck" FontSize="18" Click="searchTruck_Click"/>
+                <MenuItem x:Name="updateTruck" Header="Update Truck" FontSize="18" Click="updateTruck_Click"/>
+                <MenuItem x:Name="viewTruck" Header="View Truck" FontSize="18" Click="viewTruck_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="rentalManagement" Header="Rental" FontSize="18">
+                <MenuItem x:Name="rentTruck" Header="Rent Truck" FontSize="18" Click="rentTruck_Click"/>
+                <MenuItem x:Name="searchRented" Header="Search Rented" FontSize="18" Click="searchRented_Click"/>
+                <MenuItem x:Name="returnRented" Header="Return" FontSize="18" Click="returnRented_Click"/>
+                <MenuItem x:Name="viewRented" Header="View Rented" FontSize="18" Click="viewRented_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="customerManagement" Header="Customer" FontSize="18">
+                <MenuItem x:Name="addCustomer" Header="Add Customer" FontSize="18" Click="addCustomer_Click"/>
+                <MenuItem x:Name="searchCustomer" Header="Search Customer" FontSize="18" Click="searchCustomer_Click"/>
+                <MenuItem x:Name="viewCustomer" Header="View Customer" FontSize="18" Click="viewCustomer_Click"/>
+                <MenuItem x:Name="updateCustomer" Header="Update Customer" FontSize="18" Click="updateCustomer_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="employeeManagement" Header="Employee" FontSize="18">
+                <MenuItem x:Name="addEmployee" Header="Add Employee" FontSize="18" Click="addEmployee_Click"/>
+                <MenuItem x:Name="searchEmployee" Header="Search Employee" FontSize="18" Click="searchEmployee_Click"/>
+                <MenuItem x:Name="viewEmployee" Header="View Employee" FontSize="18" Click="viewEmployee_Click"/>
+                <MenuItem x:Name="updateEmployee" Header="Update Employee" FontSize="18" Click="updateEmployee_Click"/>
+            </MenuItem>
+            <MenuItem Header="Logout" x:Name="logout" HorizontalAlignment="Right" FontSize="18" Click="logout_Click">
+            </MenuItem>
+        </Menu>
+
+        <StackPanel x:Name="mainControl" Grid.Row="1" >
+            <Label Name="greetingLabel" FontFamily="Gabriola" Margin="0,250"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" />
+        </StackPanel>
+    </Grid>
+</Window>

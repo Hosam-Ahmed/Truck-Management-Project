@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="Project.Views.TruckManagement.addTruckUC"
+             xmlns:local="clr-namespace:Project.Views.TruckManagement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             Background="#2E333A">
+
+    <Grid Margin="0 , 50" Background="Azure">
+        <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="14*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Add Truck" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Width="auto" Margin="0, 20"/>
+
+                <Label Name="errorLabel" Grid.Row="1"  Content="Highlighted Fields are Required" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Red" Grid.RowSpan="2" FontWeight="Bold"/>
+            </Grid >
+        </StackPanel>
+
+        <StackPanel>
+            <Grid Name="formGrid" Margin="0,100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBox x:Name="modelTextBox" Style="{StaticResource MaterialDesignFilledTextBox}" Grid.Row="0" Grid.Column="0" materialDesign:HintAssist.Hint="Enter Model" Margin="15, 15, 15, 15"/>
+                <TextBox x:Name="manufacturerTextBox" Style="{StaticResource MaterialDesignFilledTextBox}"  Grid.Row="0" Grid.Column="1" materialDesign:HintAssist.Hint="Enter Manufacturer" Margin="15, 15, 15, 15"/>
+                <TextBox x:Name="manufacturerYearTextBox" Style="{StaticResource MaterialDesignFilledTextBox}" Grid.Row="0" Grid.Column="2" materialDesign:HintAssist.Hint="Manufacturer Year" Margin="15, 15, 15, 15"/>
+                <TextBox x:Name="colourTextBox" Style="{StaticResource MaterialDesignFilledTextBox}" Grid.Row="1" Grid.Column="0" materialDesign:HintAssist.Hint="Truck Color" Margin="15, 15, 15, 15"/>
+                <TextBox x:Name="seatsTextBox" Style="{StaticResource MaterialDesignFilledTextBox}" Grid.Row="1" Grid.Column="1" materialDesign:HintAssist.Hint="Truck Seats" Margin="15, 15, 15, 15"/>
+                <TextBox x:Name="doorsTextBox" Style="{StaticResource MaterialDesignFilledTextBox}" Grid.Row="1" Grid.Column="2" materialDesign:HintAssist.Hint="Truck Doors" Margin="15, 15, 15, 15"/>
+                <TextBox x:Name="dailyRentalPriceTextBox" Style="{StaticResource MaterialDesignFilledTextBox}" Grid.Column="0" Grid.Row="2" materialDesign:HintAssist.Hint="Daily Rental Price" Margin="15, 15, 15, 15"/>
+                <TextBox x:Name="advanceDepositTextBox" Style="{StaticResource MaterialDesignFilledTextBox}" Grid.Row="2" Grid.Column="1" materialDesign:HintAssist.Hint="Advance Deposit Required" Margin="15, 15, 15, 15"/>
+
+                <TextBox x:Name="regNumberTextBox" Style="{StaticResource MaterialDesignFilledTextBox}" Grid.Row="3" Grid.Column="0" materialDesign:HintAssist.Hint="Truck Registration" Margin="15, 15, 15, 15"/>
+                <DatePicker x:Name="regExpDatePicker" Style="{StaticResource MaterialDesignFilledDatePicker}" DisplayDateStart="{x:Static sys:DateTime.Today}" Grid.Row="3" Grid.Column="1" materialDesign:HintAssist.Hint="Registration Expiry" Margin="15, 15, 15, 15"/>
+                <DatePicker x:Name="wofExpDatePicker" Style="{StaticResource MaterialDesignFilledDatePicker}" DisplayDateStart="{x:Static sys:DateTime.Today}" Grid.Row="3" Grid.Column="2" materialDesign:HintAssist.Hint="WoF Expiry" Margin="15, 15, 15, 15"/>
+                <DatePicker x:Name="dateImportedDatePicker" Style="{StaticResource MaterialDesignFilledDatePicker}" Grid.Row="2" Grid.Column="2" materialDesign:HintAssist.Hint="Date Imported" Margin="15, 15, 15, 15"/>
+
+                <ComboBox x:Name="statusComboBox" Style="{StaticResource MaterialDesignFilledComboBox}" Grid.Row="0" Grid.Column="3" materialDesign:HintAssist.Hint="Truck Status" Margin="15, 15, 15, 15">
+                    <ComboBoxItem Content="Available for rent"/>
+                    <ComboBoxItem Content="Rented"/>
+                    <ComboBoxItem Content="Under Repair"/>
+                </ComboBox>
+                <ComboBox x:Name="fuelTypeComboBox" Style="{StaticResource MaterialDesignFilledComboBox}" Grid.Row="1" Grid.Column="3" materialDesign:HintAssist.Hint="Truck Fuel Type" Margin="15, 15, 15, 15">
+                    <ComboBoxItem Content="Petrol"/>
+                    <ComboBoxItem Content="Diesel"/>
+                </ComboBox>
+                <ComboBox x:Name="transmissionComboBox" Style="{StaticResource MaterialDesignFilledComboBox}" Grid.Row="2" Grid.Column="3" materialDesign:HintAssist.Hint="Truck Transmission" Margin="15, 15, 15, 15">
+                    <ComboBoxItem Content="Automatic"/>
+                    <ComboBoxItem Content="Manual"/>
+                </ComboBox>
+                <ComboBox x:Name="sizeComboBox" Style="{StaticResource MaterialDesignFilledComboBox}" Grid.Row="3" Grid.Column="3" materialDesign:HintAssist.Hint="Truck Size" Margin="15, 15, 15, 15">
+                    <ComboBoxItem Content="Standard"/>
+                    <ComboBoxItem Content="Medium"/>
+                    <ComboBoxItem Content="Large"/>
+                </ComboBox>
+
+                <Button Content="Add Truck" x:Name="addTruckButton" Style="{StaticResource MaterialDesignRaisedLightButton}"  Grid.Row="6" Grid.Column="3"  FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="38" Click="addTruckButton_Click" Margin="15, 15, 15, 15"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>
