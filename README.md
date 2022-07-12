@@ -1,4 +1,4 @@
-# Truck-Management-Project (personal devekopment project with fellow students - adding to it as we learn new concepts)
+# Truck-Management-Project (personal development project with fellow students - adding to it as we learn new concepts)
 Designed and developed a transaction management database applications using a mainstream platform and object library to present and manipulate data stored in a relational database, and to process data and generate reports.
 
 Functionalities:
